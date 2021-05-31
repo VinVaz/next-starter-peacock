@@ -12,12 +12,12 @@ export const StyledFooterSection = styled.footer`
   .footerSocialLinks {
     display: flex;
     margin: auto;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
 
   .footerSocialLink {
     display: block;
-    margin-right: 0.5em;
+    margin-right: 1em;
   }
 
   .about-site {
@@ -30,8 +30,8 @@ export const StyledFooterSection = styled.footer`
 `;
 
 const IconStyles = css`
-  height: 1.2em;
-  width: 1.2em;
+  height: 1.5em;
+  width: 1.5em;
 `;
 
 export const GitHubIcon = styled(GitHub)`

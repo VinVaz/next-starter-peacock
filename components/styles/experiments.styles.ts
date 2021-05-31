@@ -1,14 +1,17 @@
 import styled from "@emotion/styled";
-import Tilt from "react-tilt";
 
-export const Tilter = styled(Tilt)`
+export const Tilter = styled.section`
   padding: 40px 0;
-  background: #202020;
+  background: #f0f0ec;
   margin-bottom: 0.75em;
   border-radius: 4px;
   padding: 0.75em;
   cursor: pointer;
-
+  
+  &:hover {
+    background: #fcfcfc;;
+  }
+  
   @media all and (min-width: 540px) {
     margin: 0 0.5em 1em;
     flex: 1 1 40%;
@@ -56,12 +59,16 @@ export const StyledExperimentsSection = styled.section`
     h2 {
       font-size: 2.75em;
     }
+    p {
+      font-size: 0.92em;
+    }
   }
 `;
 
 export const StyledExperimentItemContainer = styled.a`
   text-decoration: none;
-
+  background: #ff0000;
+ 
   &:hover {
     text-decoration: none;
   }
@@ -77,7 +84,7 @@ export const StyledExperimentItemContainer = styled.a`
   }
 
   /* p {
-    font-size: 0.875em;
+    font-size: 0.6em;
     margin-bottom: 1em;
   } */
 
@@ -87,10 +94,11 @@ export const StyledExperimentItemContainer = styled.a`
 
   li {
     display: inline-block;
-    border: 1px solid #bf360c;
+    border: 1px solid #999;
+    border-radius: 20px;
     padding: 0.2em 0.75em;
-    color: #bf360c;
+    color: ca0200;
     font-size: 0.75em;
-    margin-right: 0.5em;
+    margin-right: 0.3em;
   }
 `;

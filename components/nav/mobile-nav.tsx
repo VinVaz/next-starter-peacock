@@ -21,8 +21,8 @@ const MobileNav = () => {
           </li>
 
           <li className="listItem">
-            <Link href="/articles">
-              <a className="link">Articles</a>
+            <Link href="/about">
+              <a className="link">About</a>
             </Link>
           </li>
 
@@ -31,21 +31,10 @@ const MobileNav = () => {
               <a className="link">Notes</a>
             </Link>
           </li>
-
           <li className="listItem">
-            <Link href="/about">
-              <a className="link">About</a>
+            <Link href="/articles">
+              <a className="link">Articles</a>
             </Link>
-          </li>
-
-          <li className="listItem">
-            <a
-              href="https://github.com/vickOnRails/next-starter-peacock"
-              target="_blank"
-              rel="noopener norefferer"
-            >
-              Source
-            </a>
           </li>
         </ul>
       </div>

@@ -1,1 +1,62 @@
-<svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.00001 0L17.6603 15H0.339752L9.00001 0Z" fill="#BF360C"/> </svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="18"
+   height="15"
+   viewBox="0 0 18 15"
+   fill="none"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="logo.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:export-filename="C:\Users\Cliente\Desktop\Programs\Companies\Personal Portfolio\portfolio\public\bitmap.png"
+   inkscape:export-xdpi="600.66016"
+   inkscape:export-ydpi="600.66016">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="8"
+     inkscape:cx="3.765919"
+     inkscape:cy="5.0261096"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     style="opacity:1;vector-effect:none;fill:#333333;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.55012989;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
+     d="M 0.009639,0.21251564 V 1.55586 L 5.5884383,11.221454 8.2832365,6.5319113 4.6343123,0.21251564 Z m 13.498315,0 L 6.3695784,12.575611 h 0.032435 l -0.016216,0.02704 1.3352361,2.313687 4.0516585,-2.340716 6.219389,-10.7710833 V 0.21251663 Z"
+     id="rect817"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\Cliente\Desktop\Programs\Companies\Personal Portfolio\next-starter-peacock\public\Logo1.png"
+     inkscape:export-xdpi="600.66016"
+     inkscape:export-ydpi="600.66016" />
+</svg>

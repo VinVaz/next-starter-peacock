@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import Link from "next/link";
 
 import { NavSection, StyledHamburger } from "./styles/nav.styles";
-import Logo from "./logo";
 import { Container } from "./container";
 import SiteConfig from "../config/index.json";
 import { MenuContext } from ".";
@@ -18,8 +17,7 @@ const Nav = () => {
         <nav className="navWrapper">
           <div className="navLeft">
             <Link href="/">
-              <a className="no-underline">
-                <Logo />
+              <a className="no-underline logo">
                 <span>{SiteConfig.author.name}</span>
               </a>
             </Link>
@@ -33,13 +31,13 @@ const Nav = () => {
 
             <ul className="navLinkList">
               <li className="navLinkItem">
-                <Link href="/works">
+                <Link href="/work">
                   <a>Work</a>
                 </Link>
               </li>
               <li className="navLinkItem">
-                <Link href="/articles">
-                  <a>Articles</a>
+                <Link href="/about">
+                  <a>About</a>
                 </Link>
               </li>
               <li className="navLinkItem">
@@ -48,19 +46,9 @@ const Nav = () => {
                 </Link>
               </li>
               <li className="navLinkItem">
-                <Link href="/about">
-                  <a>About</a>
+                <Link href="/articles">
+                  <a>Articles</a>
                 </Link>
-              </li>
-
-              <li className="navLinkItem">
-                <a
-                  href="https://github.com/vickOnRails/next-starter-peacock"
-                  target="_blank"
-                  rel="noopener norefferer"
-                >
-                  Source
-                </a>
               </li>
             </ul>
           </div>

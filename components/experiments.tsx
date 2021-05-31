@@ -9,8 +9,7 @@ const ExperimentsSection = () => (
     <Container>
       <h2>Experiments</h2>
       <p className="section-intro max-width">
-        I try to stage little experiments to help me learn things I find
-        interesting. I almost never finish them 🙈. But I learn a lot anyways
+        Small projects to pick new skills up.
       </p>
 
       <section className="experiments">

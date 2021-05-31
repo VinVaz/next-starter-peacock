@@ -4,10 +4,9 @@ export const StyledAbout = styled.section`
   .avatarImage {
     margin-right: 0.8em;
     float: left;
-    shape-outside: circle();
 
     img {
-      border-radius: 100%;
+      border-radius: 3px;
       height: 150px;
       width: 150px;
     }
@@ -15,10 +14,11 @@ export const StyledAbout = styled.section`
 
   @media (min-width: 759px) {
     .avatarImage {
-      margin-right: 1em;
+      margin-right: 1.5em;
+      margin-bottom: 1.5em;
       img {
-        height: 200px;
-        width: 200px;
+        height: 180px;
+        width: 180px;
       }
     }
     
@@ -27,7 +27,7 @@ export const StyledAbout = styled.section`
   @media (min-width: 1400px) {
     .avatarImage {
       img {
-        width: 210px;
+        width: 180px;
       }
     }
   }

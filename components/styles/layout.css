@@ -11,11 +11,11 @@
 }
 
 :root {
-  --text-color: #bbb;
+  --text-color: #2d2d2d;
   --text-color-dark: #777;
   --text-color-bright: #999;
   --text-color-white: #fff;
-  --prim-color: #b94c50;
+  --prim-color: #0073E5;
 
   --transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   --animation-duration: 0.25s;
@@ -30,12 +30,11 @@
 
 a {
   color: var(--prim-color);
-  text-decoration: underline var(--prim-color);
+  text-decoration: none;
 }
 a:hover,
 a:visited:hover {
   text-decoration: underline var(--prim-color);
-  color: #fff;
 }
 a:focus {
   outline-color: var(--prim-color);
@@ -43,6 +42,9 @@ a:focus {
 }
 a.no-underline {
   text-decoration: none;
+}
+a.logo{
+  color: var(--text-color-bright);
 }
 img {
   width: 100%;
@@ -63,7 +65,8 @@ ol {
   color: var(--text-color);
 }
 body {
-  background: #121212;
+  margin: 0;
+  background: #E8E8f8;
   color: #999;
   transition: all var(--transition-duration) var(--transition-timing-function);
 }
@@ -72,6 +75,15 @@ body {
   max-width: 500px;
   margin: 0 auto 2em;
 }
+.particles {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
 main {
   margin-bottom: 2em;
 }
@@ -83,15 +95,16 @@ h5,
 h6 {
   margin-bottom: 1em;
   font-family: "Manrope";
-  color: var(--text-color-white);
+  color: #2d2d2d;
 }
 
 h1 {
-  font-size: 2.5em;
-  color: var(--text-color-white);
-  line-height: 1.25;
+  font-size: 2.4em;
+  color: #2d2d2d;
+  line-height: 1.2;
   font-weight: 800;
-  margin-bottom: 1rem;
+  font-stretch: condensed;
+  margin-bottom: 0.4rem;
 }
 
 p,
@@ -159,16 +172,16 @@ figcaption {
 
 @media (min-width: 759px) {
   h1 {
-    font-size: 3em;
+    font-size: 2.5em;
   }
 }
 @media (min-width: 1024px) {
   h1 {
-    font-size: 4em;
+    font-size: 3em;
   }
 }
 @media (min-width: 1336px) {
   h1 {
-    font-size: 4.37em;
+    font-size: 3.5em;
   }
 }

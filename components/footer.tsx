@@ -14,7 +14,7 @@ const Footer = () => (
         <li className="footerSocialLink">
           <a
             className="footerLink"
-            href="https://github.com/vickOnRails"
+            href="https://github.com/VinVaz"
             target="_blank"
             rel="noreferrer noopener"
             aria-label="github"
@@ -26,19 +26,7 @@ const Footer = () => (
         <li className="footerSocialLink">
           <a
             className="footerLink"
-            href="https://codepen.io/Vick_onrails"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="codepen"
-          >
-            <CodepenIcon />
-          </a>
-        </li>
-
-        <li className="footerSocialLink">
-          <a
-            className="footerLink"
-            href="https://twitter.com/vick_onrails"
+            href="https://twitter.com/vsvaz"
             target="_blank"
             rel="noreferrer noopener"
             aria-label="twitter"
@@ -53,13 +41,12 @@ const Footer = () => (
       <p className="about-site">
         Built by{" "}
         <a
-          href="https://twitter.com/vick_OnRails"
+          href="https://twitter.com/vsvaz"
           target="_blank"
           rel="noreferrer noopener"
         >
-          @vick_onrails
+          @vsvaz
         </a>
-        . With NextJS, TypeScript Emotion and Vercel.
       </p>
     </Container>
   </StyledFooterSection>

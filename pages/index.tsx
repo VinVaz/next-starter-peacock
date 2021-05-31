@@ -13,10 +13,10 @@ import ExperimentsSection from "../components/experiments";
 //@ts-ignore
 const Index: FC = ({ selectedWorks }) => {
   return (
-    <Layout pathname={"/"} pageTitle="Nextjs Starter Peacock">
+    <Layout pathname={"/"} pageTitle="Vinicius Vaz">
       <StyledIndexPage>
         <Container>
-          <Cards data={selectedWorks} basePath="works" />
+          <Cards data={selectedWorks} basePath="work" />
         </Container>
         <DesignCode />
         <ExperimentsSection />

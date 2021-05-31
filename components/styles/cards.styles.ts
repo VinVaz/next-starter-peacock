@@ -10,17 +10,19 @@ export const StyledCards = styled.section`
   }
   p {
     color: var(--text-color-dark);
+    font-size: 0.95em;
   }
 
   article.article {
     margin: 0 0 2%;
+    padding: 20px;
     overflow: hidden;
 
     &:hover h2 {
-      color: #fff;
+      color: var(--text-color);
     }
     &:hover p {
-      color: var(--text-color-bright);
+      color: var(--text-color-dark);
     }
 
     img {
@@ -30,7 +32,7 @@ export const StyledCards = styled.section`
     }
 
     &:hover img {
-      transform: scale(1.1);
+      transform: scale(1.08);
     }
 
     @media all and (min-width: 560px) {
@@ -58,6 +60,7 @@ export const StyledCards = styled.section`
   time {
     color: #808080;
     font-size: 0.9em;
+    margin-bottom: 0.4em;
   }
 
   a {
@@ -75,13 +78,14 @@ export const StyledCards = styled.section`
 
   h2 {
     font-size: 1.17em;
+    margin-top: 0.5em;
     margin-bottom: 0.3em;
   }
 
   img {
     width: 100%;
     object-fit: cover;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.5em;
     transform: scale(1);
     transition: 5s all;
   }

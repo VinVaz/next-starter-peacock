@@ -12,7 +12,7 @@ const Notes = ({ notes }) => {
     <Layout
       pageTitle="Notes"
       pathname={"/notes"}
-      pageDescription="Quick and Scrappy learning notes and documentation. Things I'm learning about ReactJS, Product Design, React Native and NodeJS"
+      pageDescription="Quick and Scrappy learning notes and documentation. Things I'm learning about Python, Design, Visualization and Data Science"
     >
       <Container width="narrow">
         <p className="page-intro">

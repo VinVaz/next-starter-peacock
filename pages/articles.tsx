@@ -15,14 +15,8 @@ const Articles = ({ articles }) => {
     >
       <Container>
         <p className="page-intro">
-          More long form articles and essays about new things I'm exploring and
-          learning about...
+          Interesting things to learn and discuss...
         </p>
-
-        <blockquote>
-          All articles here are for demo purposes. But hey, the sky is the limit
-          🚀
-        </blockquote>
         <Cards data={articles} basePath="articles" />
       </Container>
     </Layout>

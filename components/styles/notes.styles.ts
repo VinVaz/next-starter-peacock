@@ -13,7 +13,7 @@ export const StyledNote = styled.article`
   margin-bottom: 2em;
 
   .icon {
-    color: #808080;
+    color: #555555;
   }
 
   .date-icon svg {
@@ -31,7 +31,7 @@ export const StyledNote = styled.article`
 
   p {
     margin: 0;
-    color: #808080;
+    color: #555555;
   }
 
   h2 {

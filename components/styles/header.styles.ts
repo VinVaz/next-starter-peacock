@@ -6,7 +6,7 @@ export const StyledHomeHeading = styled.div`
       max-width: 70%;
     }
     .description {
-      font-size: 1.2em;
+      font-size: 1.1em;
     }
   }
 
@@ -29,7 +29,7 @@ export const StyledPageHeading = styled.div`
   .about-header {
     font-size: 1.75em;
     text-align: center;
-    margin: 1.5em 0;
+    margin-bottom: 1.7em;
   }
 
   /* @media screen and (min-width: 560px) {

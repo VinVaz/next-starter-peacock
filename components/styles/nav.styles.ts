@@ -25,11 +25,9 @@ export const NavSection = styled.header`
   z-index: 10;
 
   .no-underline {
-    color: var(--text-color-dark);
-
-    &:hover {
-      color: #fff;
-    }
+    color: #2d2d2d;
+    font-size: 1.1em;
+    font-weight: bold;
   }
 
   .navRight {
@@ -57,8 +55,8 @@ export const NavSection = styled.header`
   }
 
   .navLinkItem {
-    margin-right: 0.5em;
-
+    margin-right: 1.5em;
+    font-size: 1.2em;
     &:last-child {
       margin-right: 0;
     }

@@ -1,5 +1,5 @@
 import React from "react";
-import Image from 'next/image'
+import Image from 'next/image';
 
 import { Container } from "./container";
 import { StyledDesignPlus } from "./styles/index.styles";
