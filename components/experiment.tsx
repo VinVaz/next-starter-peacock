@@ -23,7 +23,7 @@ const ExperimentItem = ({ experiment }) => {
   }
 
   return (
-    <Tilter options={{ scale: 1, speed: 200 }}>
+    <Tilter>
       <StyledExperimentItemContainer
         className="experiments-container"
         href={experiment.link}
