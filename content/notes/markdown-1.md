@@ -1,12 +1,13 @@
 ---
-title: "Getting started with React Nativ"
-date: "2021-01-01"
-slug: "getting-started-with-react-native"
-description: "Designing and building a website to connect quality photographers in Lagos, Nigeria"
-previewImage: "/images/notes/markdown_1.jpg"
-category: "til"
+title: 'Dicas de Visualização de Dados'
+date: '2021-01-20'
+slug: 'dicas-visualizacao-dados'
+description: 'Pequenas dicas para criar visualizações de dados claras e impactantes.'
+category: 'notes'
 tags:
-  - css
-  - html
+  - visualização de dados
+  - dicas
+  - gráficos
 ---
 
+Apenas um teste

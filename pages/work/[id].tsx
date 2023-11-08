@@ -1,11 +1,11 @@
-import React from "react";
-import { useRouter } from "next/router";
-import Image from 'next/image'
+import React from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 
-import { Layout, Container } from "../../components";
-import { getAllContentIds, getContentData } from "../../lib/content";
-import { IContentData } from "../articles/[id]";
-import { StyledContent } from "../../components/styles/content.styles";
+import { Layout, Container } from '../../components';
+import { getAllContentIds, getContentData } from '../../lib/content';
+import { IContentData } from '../articles/[id]';
+import { StyledContent } from '../../components/styles/content.styles';
 
 /**
  *  Renders work markdown posts
@@ -19,8 +19,19 @@ const Article = ({ workData }) => {
     <Layout pageTitle={title} pathname={pathname} pageDescription={description}>
       <Container width="narrow">
         <StyledContent>
-          <time>{workData.date}</time>
-          {workData.previewImage && <Image src={workData.previewImage} height={550} width={1200} />}
+          <div className="largeTextTime">
+            <time>{workData.date}</time>
+          </div>
+          {workData.previewImage && (
+            <div className="mainImageContainer">
+              <Image
+                src={workData.previewImage}
+                height={550}
+                width={1200}
+                className="mainImage"
+              />
+            </div>
+          )}
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </StyledContent>
       </Container>
@@ -29,7 +40,7 @@ const Article = ({ workData }) => {
 };
 
 export const getStaticPaths = async () => {
-  const paths = getAllContentIds("work");
+  const paths = getAllContentIds('work');
   return {
     paths,
     fallback: false,
@@ -37,7 +48,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const workData: IContentData = await getContentData(params.id, "work");
+  const workData: IContentData = await getContentData(params.id, 'work');
   return {
     props: {
       workData,

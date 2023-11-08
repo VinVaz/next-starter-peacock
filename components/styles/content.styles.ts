@@ -6,14 +6,34 @@ export const StyledContent = styled.section`
     padding-left: 1em;
     margin-bottom: 1em;
   }
-
-  code {
+  
+  h2 {
+    margin-top: 5rem;
   }
 
-  time {
-    text-align: center;
-    display: block;
+  background-color: #E8E8F8;
+
+  .mainImage {
+    border-radius: 1.2rem;
+    
+  }
+
+  .mainImageContainer {
+    margin-bottom: 2rem;
+  }
+
+  .largeTextTime {
+    display: flex;
+    justify-content: center;
+  }
+
+  .largeTextTime > time {
+    display: inline-flex;
+    background-color: #474747;
+    color: #fff;
     margin-bottom: 2em;
+    padding: 1px 6px;
+    border-radius: 0.2rem;
   }
 
   img {
@@ -29,7 +49,31 @@ export const StyledContent = styled.section`
     margin-bottom: 0.5em;
   }
 
-  pre code {
-    overflow: hidden;
+  .code {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow: auto;
   }
+
+  pre {
+    background-color: #303030;
+    border: 1px solid #dcdcdc;
+    padding: 15px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    overflow-x: auto;
+    margin-bottom: 3rem;
+  }
+
+  blockquote {
+    background-color: #303030;
+    border: 1px solid #dcdcdc;
+    padding: 10px 10px 10px 30px;
+    margin: 10px 0;
+  }
+  
 `;

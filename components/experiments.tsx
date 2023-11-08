@@ -1,15 +1,16 @@
-import React from "react";
-import { experiments } from "../content/experiments";
-import { Container } from "./container";
-import { StyledExperimentsSection } from "./styles/experiments.styles";
-import ExperimentItem from "./experiment";
+import React from 'react';
+import { experiments } from '../content/experiments';
+import { Container } from './container';
+import { StyledExperimentsSection } from './styles/experiments.styles';
+import ExperimentItem from './experiment';
 
 const ExperimentsSection = () => (
   <StyledExperimentsSection>
     <Container>
-      <h2>Experiments</h2>
+      <h2>Certificações</h2>
       <p className="section-intro max-width">
-        Small projects to pick new skills up.
+        Certificados e cursos que fiz ao longo dos anos para ampliar minhas
+        habilidades.
       </p>
 
       <section className="experiments">

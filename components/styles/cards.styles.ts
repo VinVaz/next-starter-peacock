@@ -12,8 +12,9 @@ export const StyledCards = styled.section`
     color: var(--text-color-dark);
     font-size: 0.95em;
   }
-
+    
   article.article {
+    background-color: #E8E8F8;
     margin: 0 0 2%;
     padding: 20px;
     overflow: hidden;
@@ -32,7 +33,7 @@ export const StyledCards = styled.section`
     }
 
     &:hover img {
-      transform: scale(1.08);
+      transform: scale(1.04);
     }
 
     @media all and (min-width: 560px) {

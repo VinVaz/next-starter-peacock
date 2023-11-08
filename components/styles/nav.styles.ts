@@ -32,6 +32,7 @@ export const NavSection = styled.header`
 
   .navRight {
     position: relative;
+    background-color: #E8E8F8;
   }
 
   .navWrapper {
@@ -84,6 +85,7 @@ export const NavSection = styled.header`
 `;
 
 export const StyledMobileNav = styled.section`
+  
   position: absolute;
   top: 0;
   bottom: 0;
@@ -92,6 +94,7 @@ export const StyledMobileNav = styled.section`
   animation: ${fadeDown} 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 
   .mobile-nav-container {
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,11 +102,14 @@ export const StyledMobileNav = styled.section`
   }
 
   .linkList {
+    background-color: #E8E8F8;
+    padding: 50px 80px;
+    border-radius: 1.2rem;
     list-style-type: none;
   }
   .listItem {
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
   }
 
   .link {
@@ -122,11 +128,10 @@ export const StyledHamburger = styled.button<IStyledHamburger>`
   border: none;
   border-radius: 50%;
   cursor: pointer;
-
   &::before,
   &::after {
     content: "";
-    background: #fff;
+    background: #303030;
     height: 2px;
     width: 100%;
     position: absolute;
