@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const StyledContent = styled.section`
+export const StyledContent = styled('section')`
   ul,
   ol {
     padding-left: 1em;
@@ -50,19 +50,13 @@ export const StyledContent = styled.section`
   }
 
   .code {
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 10px;
     overflow: auto;
   }
 
   pre {
-    background-color: #303030;
-    border: 1px solid #dcdcdc;
-    padding: 15px;
+    border: 1px solid #d0d0d0;
     display: block;
-    padding: 10px;
     border-radius: 5px;
     font-size: 14px;
     overflow-x: auto;

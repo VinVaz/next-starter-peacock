@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import styled from "@emotion/styled";
 
 export const StyledAbout = styled.section`
@@ -18,6 +19,7 @@ export const StyledAbout = styled.section`
   }
 
   .avatarImage {
+    display: block;
     margin-bottom: 20px; /* Adjust margin-bottom for spacing between photo and next element */
     img {
       border-radius: 0.8rem;

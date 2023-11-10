@@ -1,13 +1,13 @@
-import React from "react";
-import { Calendar } from "react-feather";
-import { StyledNote, StyledNoteLink } from "../styles/notes.styles";
-import Link from "next/link";
+import React from 'react';
+import { Calendar } from 'react-feather';
+import { StyledNote, StyledNoteLink } from '../styles/notes.styles';
+import Link from 'next/link';
 
 export interface INote {
   title: string;
   id: string;
   slug: string;
-  date: Date;
+  date: string;
   basePath: string;
 }
 

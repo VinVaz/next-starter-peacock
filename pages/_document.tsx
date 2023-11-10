@@ -1,6 +1,6 @@
-import Document, { Head, Main, NextScript, Html } from "next/document";
+import Document, { Head, Main, NextScript, Html } from 'next/document';
 
-import ANALYTICS_ID from "../lib/gtag";
+import ANALYTICS_ID from '../lib/gtag';
 
 export default class MyDocument extends Document {
   render() {
@@ -28,10 +28,19 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/felipec.min.css"
+          />
         </Head>
         <body>
           <Main />
           <NextScript />
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+          <script
+            dangerouslySetInnerHTML={{ __html: 'hljs.highlightAll();' }}
+          />
         </body>
       </Html>
     );

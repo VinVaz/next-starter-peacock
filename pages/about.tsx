@@ -93,8 +93,8 @@ const About = () => {
             <div className="avatarImage">
               <Image
                 src="/images/avatar.jpg"
-                width={512}
-                height={512}
+                width={210}
+                height={210}
                 alt="Vinicius Vaz"
               />
             </div>
