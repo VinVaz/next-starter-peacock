@@ -19,7 +19,7 @@ const Article = ({ articlesData }: { articlesData: IContentData }) => {
     <Layout pathname={pathname} pageTitle={title} pageDescription={description}>
       <Container width="narrow">
         <StyledContent>
-          <time>{articlesData.date.toLocaleDateString()}</time>
+          <time>{articlesData.date}</time>
           {articlesData.previewImage && (
             <Image src={articlesData.previewImage} height={550} width={1200} />
           )}
@@ -42,7 +42,7 @@ export const getStaticPaths = async () => {
 export interface IContentData {
   id: string;
   contentHtml: string;
-  date: Date;
+  date: string;
   title: string;
   previewImage?: string;
   description?: string;
