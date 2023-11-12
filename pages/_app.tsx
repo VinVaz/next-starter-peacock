@@ -1,9 +1,10 @@
-import React, { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { AppProps } from 'next/app';
 import type { Container, Engine } from 'tsparticles-engine';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
 import '../components/styles/layout.css';
+import 'highlight.js/styles/felipec.min.css';
 
 /**
  * Root level component for all pages
@@ -52,7 +53,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               },
             },
             color: {
-              value: '#303030',
+              value: '#555358',
             },
             opacity: {
               value: 0.8,
@@ -72,7 +73,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             links: {
               enable: true,
               distance: 200,
-              color: '#303030',
+              color: '#555358',
               opacity: 0.25,
               width: 1,
             },

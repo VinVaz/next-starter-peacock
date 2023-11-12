@@ -107,7 +107,7 @@ export const getContentData = async (id: string, contentType: IContentType) => {
 
   const matterResult = matter(fileContents);
   const processedContent = await remark()
-    .use(html)
+    .use(html, {sanitize: false})
     .use(remarkPrism)
     .process(matterResult.content);
 

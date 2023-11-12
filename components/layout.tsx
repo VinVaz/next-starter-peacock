@@ -1,12 +1,13 @@
-import React, { useState, createContext, ReactNode } from "react";
-import Head from "next/head";
-import SiteConfig from "../config/index.json";
-
-import { StyledMain } from "./styles/layout.styles";
-import Header from "./header/header";
-import Footer from "./footer";
-import Nav from "./nav";
-import MobileNav from "./nav/mobile-nav";
+import { useState, createContext, ReactNode, useEffect } from 'react';
+import Head from 'next/head';
+import SiteConfig from '../config/index.json';
+import { StyledMain } from './styles/layout.styles';
+import Header from './header/header';
+import Footer from './footer';
+import Nav from './nav';
+import MobileNav from './nav/mobile-nav';
+import hljs from 'highlight.js/lib/core';
+import python from 'highlight.js/lib/languages/python';
 
 interface ILayout {
   children: ReactNode;
@@ -27,11 +28,20 @@ const Layout = ({
   pageTitle,
   pageDescription,
 }: ILayout) => {
+  hljs.registerLanguage('python', python);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenuOpen = () => {
     menuOpen ? setMenuOpen(false) : setMenuOpen(true);
   };
+
+  useEffect(() => {
+    document.querySelectorAll('code.language-python').forEach((block) => {
+      if (block instanceof HTMLElement) {
+        hljs.highlightBlock(block);
+      }
+    });
+  }, []);
 
   return (
     <MenuContext.Provider value={{ menuOpen, toggleMenuOpen }}>

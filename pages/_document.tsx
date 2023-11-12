@@ -28,19 +28,12 @@ export default class MyDocument extends Document {
           `,
             }}
           />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/felipec.min.css"
-          />
+          <link href="themes/prism.css" rel="stylesheet" />
         </Head>
         <body>
           <Main />
           <NextScript />
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
-          <script
-            dangerouslySetInnerHTML={{ __html: 'hljs.highlightAll();' }}
-          />
+          <script src="prism.js"></script>
         </body>
       </Html>
     );

@@ -55,6 +55,7 @@ export const StyledContent = styled('section')`
   }
 
   pre {
+    padding: 0;
     border: 1px solid #d0d0d0;
     display: block;
     border-radius: 5px;
