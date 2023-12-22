@@ -25,9 +25,11 @@ const Article = ({ workData }) => {
             <div className="mainImageContainer">
               <Image
                 src={workData.previewImage}
+                alt="Main Image"
                 height={550}
                 width={1200}
                 className="mainImage"
+                priority
               />
             </div>
           )}

@@ -6,10 +6,9 @@ import {remark} from "remark";
 import html from "remark-html";
 import remarkPrism from "remark-prism";
 import { IContentData } from "../pages/articles/[id]";
+import remarkGfm from 'remark-gfm'
+import remarkBreaks from 'remark-breaks'
 
-const workDirectory = path.join(process.cwd(), "content", "work");
-const notesDirectory = path.join(process.cwd(), "content", "notes");
-const articlesDirectory = path.join(process.cwd(), "content", "articles");
 
 type IContentType = "articles" | "notes" | "work";
 
@@ -18,43 +17,44 @@ type IContentType = "articles" | "notes" | "work";
  * @param {string} contentType Type of content to get ids
  */
 
-export const getAllContentIds = (contentType: IContentType) => {
+function getContentInfo (contentType: IContentType) {
   let filenames;
   let baseDir;
 
-  // determine where to look for content types
   switch (contentType) {
     case "articles":
-      baseDir = articlesDirectory;
-      filenames = fs.readdirSync(articlesDirectory);
+      baseDir = path.join(process.cwd(), "content", "articles");;
+      filenames = fs.readdirSync(baseDir);
       break;
-
     case "notes":
-      baseDir = notesDirectory;
-      filenames = fs.readdirSync(notesDirectory);
+      baseDir = path.join(process.cwd(), "content", "notes");
+      filenames = fs.readdirSync(baseDir);
       break;
-
     case "work":
-      baseDir = workDirectory;
-      filenames = fs.readdirSync(workDirectory);
+      baseDir = path.join(process.cwd(), "content", "work");
+      filenames = fs.readdirSync(baseDir);
       break;
-
     default:
       console.log("You have to provide a content type");
   }
+  
+  return {baseDir, filenames}
+}
 
-  // return the slug of all the content IDs
+function readAndParseFile(baseDir, fileName) {
+  const filePath = path.join(baseDir, fileName);
+  const fileContent = fs.readFileSync(filePath, 'utf-8');
+  const matterResult = matter(fileContent);
+  return matterResult;
+}
+
+export const getAllContentIds = (contentType: IContentType) => {
+  const {baseDir, filenames} = getContentInfo(contentType)
   return filenames.map((filename) => {
-    const filePath = path.join(baseDir, filename);
-    const fileContent = fs.readFileSync(filePath, "utf-8");
-
-    const matterResult = matter(fileContent);
-
+    const { data } = readAndParseFile(baseDir, filename);
     return {
       params: {
-        // This is where we switch it up to use slug instead of the filename for generating pages
-        // id: filename.replace(/\.md$/, ""),
-        id: matterResult.data.slug,
+        id: data.slug
       },
     };
   });
@@ -67,47 +67,21 @@ export const getAllContentIds = (contentType: IContentType) => {
  */
 
 export const getContentData = async (id: string, contentType: IContentType) => {
-  let contentTypeDirectory;
-  let filenames;
-  switch (contentType) {
-    case "articles":
-      filenames = fs.readdirSync(articlesDirectory);
-      contentTypeDirectory = articlesDirectory;
-      break;
-
-    case "notes":
-      filenames = fs.readdirSync(notesDirectory);
-      contentTypeDirectory = notesDirectory;
-      break;
-
-    case "work":
-      filenames = fs.readdirSync(workDirectory);
-      contentTypeDirectory = workDirectory;
-      break;
-
-    default:
-      console.log("You have to provide a content type");
-  }
-
-  // loop through all the content types and compare the slug to get the filename
-  const match = filenames.filter((filename) => {
-    const filePath = path.join(contentTypeDirectory, filename);
-
-    const fileContent = fs.readFileSync(filePath, "utf-8");
-    const matterResult = matter(fileContent);
-    const { slug } = matterResult.data;
-
-    return slug === id;
+  const {baseDir, filenames} = getContentInfo(contentType)
+  const matchingFilename = filenames.find((filename) => {
+    const { data } = readAndParseFile(baseDir, filename);
+    return data.slug === id;
   });
 
-  // use the returned path to get the fullpath and read the file content
-  const fullPath = path.join(contentTypeDirectory, match[0]);
-  // const fullPath = path.join(contentTypeDirectory, `${id}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf-8");
+  if (!matchingFilename) {
+    return null;
+  }
 
-  const matterResult = matter(fileContents);
+  const matterResult = readAndParseFile(baseDir, matchingFilename);
   const processedContent = await remark()
-    .use(html, {sanitize: false})
+    .use(html, { sanitize: false })
+    .use(remarkBreaks)
+    .use(remarkGfm)
     .use(remarkPrism)
     .process(matterResult.content);
 
@@ -130,37 +104,12 @@ export const getContentData = async (id: string, contentType: IContentType) => {
  * @param {string} contentType Type of content
  */
 export const getContentList = (contentType: IContentType) => {
-  let contentFiles;
-  let contentDir;
+  const {baseDir, filenames} = getContentInfo(contentType)
 
-  switch (contentType) {
-    case "articles":
-      contentFiles = fs.readdirSync(articlesDirectory);
-      contentDir = articlesDirectory;
-
-      break;
-
-    case "notes":
-      contentFiles = fs.readdirSync(notesDirectory);
-      contentDir = notesDirectory;
-      break;
-
-    case "work":
-      contentFiles = fs.readdirSync(workDirectory);
-      contentDir = workDirectory;
-      break;
-  }
-
-  const content = contentFiles
+  const content = filenames
     .filter((content) => content.endsWith(".md"))
     .map((content) => {
-      const path = `${contentDir}/${content}`;
-      const rawContent = fs.readFileSync(path, {
-        encoding: "utf-8",
-      });
-
-      const { data } = matter(rawContent);
-
+      const {data} = readAndParseFile(baseDir, content);
       return {
         ...data,
         previewImage: data.previewImage || "/images/image-placeholder.png",
@@ -176,34 +125,11 @@ export const getContentList = (contentType: IContentType) => {
  * @param {string} tag - tag to filter by
  */
 export const getContentWithTag = (tag: string, contentType: IContentType) => {
-  let contentDir;
-  let contentFiles;
-
-  switch (contentType) {
-    case "articles":
-      contentDir = articlesDirectory;
-      break;
-
-    case "notes":
-      contentDir = notesDirectory;
-      break;
-
-    case "work":
-      contentDir = workDirectory;
-      break;
-  }
-
-  contentFiles = fs.readdirSync(contentDir);
-
-  let contentData = contentFiles
+  const {baseDir, filenames} = getContentInfo(contentType)
+  let contentData = filenames
     .filter((content) => content.endsWith(".md"))
     .map((content) => {
-      const path = `${contentDir}/${content}`;
-      const rawContent = fs.readFileSync(path, {
-        encoding: "utf-8",
-      });
-
-      const { data } = matter(rawContent);
+      const {data} = readAndParseFile(baseDir, content);
 
       return {
         ...data,
@@ -227,34 +153,12 @@ export const getContentInCategory = (
   category: string,
   contentType: IContentType
 ) => {
-  let contentDir;
-  let contentFiles;
+  const {baseDir, filenames} = getContentInfo(contentType)
 
-  switch (contentType) {
-    case "articles":
-      contentDir = articlesDirectory;
-      break;
-
-    case "notes":
-      contentDir = notesDirectory;
-      break;
-
-    case "work":
-      contentDir = workDirectory;
-      break;
-  }
-
-  contentFiles = fs.readdirSync(contentDir);
-
-  let contentData = contentFiles
+  let contentData = filenames
     .filter((content) => content.endsWith(".md"))
     .map((content) => {
-      const path = `${contentDir}/${content}`;
-      const rawContent = fs.readFileSync(path, {
-        encoding: "utf-8",
-      });
-
-      const { data } = matter(rawContent);
+      const {data} = readAndParseFile(baseDir, content);
 
       return {
         ...data,

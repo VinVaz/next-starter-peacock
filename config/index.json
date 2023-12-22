@@ -1,16 +1,16 @@
 {
   "author": {
-    "name": "Vinicius Vaz",
-    "title": "Projects",
+    "name": "Vinícius Vaz",
+    "title": "Portfólio",
     "twitterHandle": "@vsvaz",
-    "description": "Hi! My name is <a href='/'>Vinicius</a>, this is my personal Portfolio to showcase the skills I've acquired over time. I hope you find something interesting to get inspired by."
+    "description": "Olá! Meu nome é <a href='https://www.linkedin.com/in/vin%C3%ADcius-vaz-046343191/'>Vinicius</a> e este um espaço para compartilhar meus meus projetos, aprendizados e estudos na área de dados."
   },
   "site": {
-    "siteUrl": "http://www.viniciusvaz.website/",
+    "siteUrl": "https://vinicius-vaz-portfolio.vercel.app/",
     "siteName": "Vinicius Vaz",
     "siteTitle": "Portfolio",
-    "siteDescription": "Personal Website made by @vsvaz to showcase some of his Projects.",
-    "keywords": "JavaScript, NextJS, Software Engineer, Full-stack Engineer, ReactJS Engineer, Data Science, Data Engineering, Machine Learning, Vizualization, Vinicius Vaz, Data",
+    "siteDescription": "Portfolio feito por @vsvaz para demonstrar seus projetos na área de Dados.",
+    "keywords": "Data Analytics, Data Analysis, SQL, Python, Data Viz, Analytics Engineer, Pandas, Numpy, Data Science, Data Engineering, Machine Learning, Vizualization, Vinicius Vaz, Data",
     "siteImage": "../public/Logo.png"
   }
 }

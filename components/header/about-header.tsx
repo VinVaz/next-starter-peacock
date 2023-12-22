@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import { Container } from "../container";
-import { StyledPageHeading } from "../styles/header.styles";
+import { Container } from '../container';
+import { StyledPageHeading } from '../styles/header.styles';
 
 const AboutHeader = () => (
   <StyledPageHeading>
     <Container>
       <div className="header-container">
-        <h1 className="about-header">About Me</h1>
+        <h1 className="about-header">Sobre Mim</h1>
       </div>
     </Container>
   </StyledPageHeading>

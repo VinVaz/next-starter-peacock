@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import Link from "next/link";
+import React, { useContext } from 'react';
+import Link from 'next/link';
 
-import { NavSection, StyledHamburger } from "./styles/nav.styles";
-import { Container } from "./container";
-import SiteConfig from "../config/index.json";
-import { MenuContext } from ".";
+import { NavSection, StyledHamburger } from './styles/nav.styles';
+import { Container } from './container';
+import SiteConfig from '../config/index.json';
+import { MenuContext } from '.';
 
 const Nav = () => {
   const menuContext = useContext(MenuContext);
@@ -32,22 +32,22 @@ const Nav = () => {
             <ul className="navLinkList">
               <li className="navLinkItem">
                 <Link href="/work">
-                  <a>Work</a>
+                  <a>Projetos</a>
                 </Link>
               </li>
               <li className="navLinkItem">
                 <Link href="/about">
-                  <a>About</a>
+                  <a>Sobre</a>
                 </Link>
               </li>
               <li className="navLinkItem">
                 <Link href="/notes">
-                  <a>Notes</a>
+                  <a>Anotações</a>
                 </Link>
               </li>
               <li className="navLinkItem">
                 <Link href="/articles">
-                  <a>Articles</a>
+                  <a>Blog</a>
                 </Link>
               </li>
             </ul>

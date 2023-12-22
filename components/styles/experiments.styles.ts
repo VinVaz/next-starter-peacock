@@ -2,12 +2,12 @@ import styled from "@emotion/styled";
 
 export const Tilter = styled.section`
   padding: 40px 0;
-  background: #f0f0ec;
+  background: #f7f7f2;
   margin-bottom: 0.75em;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 0.75em;
   cursor: pointer;
-  
+  margin-bottom: 24px;
   &:hover {
     background: #fcfcfc;;
   }
@@ -24,7 +24,7 @@ export const Tilter = styled.section`
 
 export const StyledExperimentsSection = styled.section`
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 
   h2 {
     font-size: 1.75em;

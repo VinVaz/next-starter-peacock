@@ -3,7 +3,7 @@ title: Visualizador de Séries Temporais
 date: '2020-04'
 slug: 'view-time-series-visualizer'
 selectedWork: true
-description: 'Designing and building a website to connect quality photographers in Lagos, Nigeria'
+description: 'Análise do crescimento do fórum da freeCodeCamp.org entre 2016 e 2019 utilizando Python'
 previewImage: '/images/work/view-time-series-visualizer/box_plot.png'
 ---
 
@@ -15,6 +15,16 @@ Neste projeto, a tarefa é visualizar dados de séries temporais usando gráfico
 
 - **date:** A data correspondente aos dados de visualizações.
 - **value:** O número de visualizações de página registradas para o respectivo dia.
+
+|    date    | value |
+| :--------: | :---: |
+| 2016-05-09 | 1201  |
+| 2016-05-10 | 2329  |
+| 2016-05-11 | 1716  |
+| 2016-05-12 | 10539 |
+| 2016-05-13 | 6933  |
+
+Conjunto de dados completo:
 
 > [fcc-forum-pageviews.csv](https://gist.github.com/VinVaz/fe0cbd0db5e1acccdc76e845e99c5672)
 
@@ -32,7 +42,7 @@ from pandas.plotting import register_matplotlib_converters
 # Registrando conversores de data do pandas para matplotlib
 register_matplotlib_converters()
 
-# Importando dados (Certifique-se de analisar as datas. Considere definir a coluna índice para 'date'.)
+# Importar dados
 df = pd.read_csv('fcc-forum-pageviews.csv', )
 df = df.set_index(['date'])
 df.index = pd.to_datetime(df.index,format='%Y-%m-%d')
@@ -76,7 +86,7 @@ def draw_line_plot():
     date_format = mpl_dates.DateFormatter('%Y-%m')
     ax.xaxis.set_major_formatter(date_format)    
 
-    # Salvando a imagem e retornando a figura (não altere esta parte)
+    # Salvando a imagem e retornando a figura
     fig.savefig('line_plot.png')
 
     return fig
@@ -108,7 +118,7 @@ def draw_bar_plot():
 
     # A legenda deve mostrar os rótulos dos meses e ter um título "Meses".
    
-    # Salvando a imagem e retornando a figura (não altere esta parte)
+    # Salvando a imagem e retornando a figura
     fig.savefig('bar_plot.png')
 
     return fig
@@ -132,7 +142,7 @@ def draw_box_plot():
     df_box['month'] = pd.Categorical(df_box['month'], categories=month, ordered=True)
     df_box = df_box.sort_values(by=['month'], inplace=False)
 
-    # Criando os gráficos de caixa (usando Seaborn)
+    # Criando os gráficos de caixa (Seaborn)
     fig, axes = plt.subplots(figsize=(20, 7), ncols=2, sharex=False)
    
     ax1 = sns.boxplot(x='year', y='value', data=df_box, ax=axes[0])
@@ -145,7 +155,7 @@ def draw_box_plot():
     ax2.set_ylabel('Page Views')
     ax2.set_xlabel('Month')
 
-    # Salvando a imagem e retornando a figura (não altere esta parte)
+    # Salvando a imagem e retornando a figura
     fig.savefig('box_plot.png')
 
     return fig

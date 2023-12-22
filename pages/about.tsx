@@ -12,7 +12,7 @@ const About = () => {
     <Layout
       pathname={'/about'}
       pageTitle="Sobre Mim"
-      pageDescription="About page of Vinicius Vaz which is part of his Professional Portfolio."
+      pageDescription="Pagina Sobre Mim Que Descreve mais Sobre a Trajetoria Profissional de Vinicius"
     >
       <StyledAbout>
         <Container width="narrow">
@@ -27,8 +27,8 @@ const About = () => {
                 dados e inovação, com uma formação sólida em Engenharia Civil
                 pela UnB, com foco especial em transportes. Minha jornada
                 acadêmica me ensinou a resolver problemas complexos e
-                desenvolver habilidades analíticas aguçadas, características que
-                trago para minha carreira como Analista de Dados.
+                desenvolver habilidades analíticas, características que trago
+                para minha carreira como Analista de Dados.
               </p>
 
               <p>

@@ -1,7 +1,7 @@
-import React from "react";
-import { Layout, Container } from "../components";
-import { getContentList } from "../lib/content";
-import NotesComponent from "../components/notes/notes";
+import React from 'react';
+import { Layout, Container } from '../components';
+import { getContentList } from '../lib/content';
+import NotesComponent from '../components/notes/notes';
 
 /**
  * Blog page `/blog`
@@ -10,14 +10,15 @@ import NotesComponent from "../components/notes/notes";
 const Notes = ({ notes }) => {
   return (
     <Layout
-      pageTitle="Notes"
-      pathname={"/notes"}
-      pageDescription="Quick and Scrappy learning notes and documentation. Things I'm learning about Python, Design, Visualization and Data Science"
+      pageTitle="Anotações"
+      pathname={'/notes'}
+      pageDescription="Anotações Curtas sobre Coisas que Vou Aprendendo em Meu Trajeto sobre Visualização de Dados, Python, Batch, Excel entre outras Tecnologias e Habilidades"
     >
       <Container width="narrow">
         <p className="page-intro">
-          Quick and Scrappy thoughts and learning notes. Things I randomly bump
-          into and don't want to forget.
+          Anotações Curtas sobre Coisas que Vou Aprendendo em Meu Trajeto sobre
+          Visualização de Dados, Python, Batch, Excel entre outras Tecnologias e
+          Habilidades
         </p>
 
         <NotesComponent notes={notes} basePath="notes" />
@@ -28,7 +29,7 @@ const Notes = ({ notes }) => {
 };
 
 export const getStaticProps = async () => {
-  const notes = getContentList("notes");
+  const notes = getContentList('notes');
   return {
     props: { notes },
   };

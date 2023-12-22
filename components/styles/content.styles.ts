@@ -11,6 +11,10 @@ export const StyledContent = styled('section')`
     margin-top: 5rem;
   }
 
+  hr {
+    border: 1px solid #A4B2CB;
+  }
+
   background-color: #E8E8F8;
 
   .mainImage {
@@ -71,4 +75,46 @@ export const StyledContent = styled('section')`
     margin: 10px 0;
   }
   
+  table {
+    border-collapse: collapse;
+    position: relative;
+    left: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 5px 0px;
+    font-size: 0.8em;
+    background-color: #e8e8f8;
+    border-radius: 5px;
+    border: none;
+    width: max-content;
+    overflow-x: auto
+  }
+
+  table tr {
+    text-align: center;
+  }
+
+  table thead {
+    border-bottom: 2px solid #dedede;
+  }
+
+  table th, table td {
+    padding: 5px 15px;
+    text-align: center;
+    color: #303030;
+    border: none;
+  } 
+
+  table tbody tr:nth-of-type(even) {
+    background-color: #cecede;
+  }
+
+  table tbody tr:hover {
+    background-color: #e1f5fe;
+  }
+
+  table tbody tr:nth-of-type(even):hover {
+    background-color: #e1f5fe;
+  }
+
 `;
